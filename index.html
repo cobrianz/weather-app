@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="weather-app-container">
+    <header class="weather-header">
+      <form class="location-search-form" aria-label="Select location">
+        <select id="location-select" class="location-selector" aria-labelledby="Select location">
+          <option value="34.0522,-118.2437">Los Angeles, USA</option>
+          <option value="48.2082,16.3738">Vienna, Austria</option>
+          <option value="40.7306,-73.9352">Brooklyn, USA</option>
+          <option value="39.9042,116.4074">Beijing, China</option>
+          <option value="41.9028,12.4964">Rome, Italy</option>
+          <option value="37.9838,23.7275">Athens, Greece</option>
+          <option value="34.0522,-118.2437">Los Angeles, USA</option>
+          <option value="39.7392,-104.9903">Denver, USA</option>
+          <option value="59.3293,18.0686">Stockholm, Sweden</option>
+          <option value="19.0760,72.8777">Mumbai, India</option>
+        </select>
+        
+      </form>
+      <div class="current-location-display">
+        <span class="current-location-country" id="location-country"></span>
+      </div>
+    </header>
+
+    <main class="main-content-wrapper">
+      <section class="current-day-content">
+        <h2 id="day-label">Today</h2>
+        <h1 class="selected-city-name" id="location-name">Select a Location</h1>
+        <div class="current-datetime-display" id="datetime-display">
+          <p>Loading...</p>
+        </div>
+        <div class="sun-timings-section">
+          <p><span><img src="https://img.icons8.com/?size=100&id=Pqon42y7ErXu&format=png&color=000000" alt=""></span> <span id="sunrise">--:--</span> Sunrise</p>
+          <p><span><img src="https://img.icons8.com/?size=100&id=9XlIvJuZ1DEv&format=png&color=000000" alt=""></span> <span id="sunset">--:--</span> Sunset</p>
+        </div>
+      </section>
+
+      <section class="additional-info-cards">
+        <div class="additional-info-card">
+          <img src="https://img.icons8.com/?size=100&id=aLW2nEHV0bne&format=png&color=000000" alt="">
+          <div>
+            <p>Dawn</p>
+            <p class="dawn-info-display">--:--</p>
+          </div>
+        </div>
+        <div class="additional-info-card">
+          <img src="https://img.icons8.com/?size=100&id=BXeNa4uwSWK4&format=png&color=000000" alt="">
+          <div>
+            <p>Dusk</p>
+            <p class="dusk-info-display">--:--</p>
+          </div>
+        </div>
+        <div class="additional-info-card">
+          <img src="https://img.icons8.com/?size=100&id=A4CUEBhQfI4n&format=png&color=000000" alt="">
+          <div>
+            <p>Day length</p>
+            <p class="day-length-display">--:--</p>
+          </div>
+        </div>
+        <div class="additional-info-card">
+          <img src="https://img.icons8.com/?size=100&id=UgmGYJ5JVCLu&format=png&color=000000" alt="">
+          <div>
+            <p>Solar noon</p>
+            <p class="solar-noon-display">--:--</p>
+          </div>
+        </div>
+        <div class="additional-info-card">
+          <img src="https://img.icons8.com/?size=100&id=9OlKaCDrDqNf&format=png&color=000000" alt="">
+          <div>
+            <p>Time zone</p>
+            <p class="timezone-info-display">--:--</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Button to toggle Today/Tomorrow data -->
+      <button id="tommorrow" aria-label="Toggle day data">Tomorrow</button>
+
+      <!-- Error message area -->
+      <div id="error-message" class="error-message-section" role="alert" style="display: none;">
+        Error retrieving data. Please try again.
+      </div>
+    </main>
+  </div>
+  <!-- Footer with API credit -->
+  <footer class="weather-footer">
+    <p>Data provided by <a href="https://sunrisesunset.io" target="_blank" rel="noopener noreferrer">sunrisesunset.io</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
